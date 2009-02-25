@@ -7,3 +7,8 @@ Reads a rails app's log file for slow actions
 == Usage
 ./bin/slow-actions.rb path/to/log/file
 
+Or:
+
+  require 'slow_actions'
+  sap = SlowActionParser.new(file_path)
+  actions = sap.parse
