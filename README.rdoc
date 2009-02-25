@@ -1,0 +1,9 @@
+= Slow Actions
+Nick Gauthier (nick@smartlogicsolutions.com)
+
+== Description
+Reads a rails app's log file for slow actions
+
+== Usage
+./slow-actions.rb path/to/log/file
+
