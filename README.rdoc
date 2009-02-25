@@ -5,5 +5,5 @@ Nick Gauthier (nick@smartlogicsolutions.com)
 Reads a rails app's log file for slow actions
 
 == Usage
-./slow-actions.rb path/to/log/file
+./bin/slow-actions.rb path/to/log/file
 
