@@ -1,0 +1,246 @@
+Processing StaticPagesController#static_hunters_lodge (for 141.153.81.49 at 2009-02-23 22:09:43) [GET]
+  Session ID: 926fca1a3f54fdd0adc45c7406155306
+  Parameters: {"action"=>"static_hunters_lodge", "controller"=>"static_pages"}
+Rendering template within layouts/application
+Rendering static_pages/static_hunters_lodge
+Completed in 0.06000 (16 reqs/sec) | Rendering: 0.04000 (66%) | DB: 0.00400 (6%) | 200 OK [http://play.scavengrnet.com/]
+
+
+Processing SessionsController#new (for 141.153.81.49 at 2009-02-23 22:10:01) [GET]
+  Session ID: 926fca1a3f54fdd0adc45c7406155306
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Redirected to https://play.scavengrnet.com/login
+Filter chain halted as [:ensure_proper_protocol] rendered_or_redirected.
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://play.scavengrnet.com/login]
+
+
+Processing SessionsController#new (for 141.153.81.49 at 2009-02-23 22:10:02) [GET]
+  Session ID: 926fca1a3f54fdd0adc45c7406155306
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.01600 (57%) | DB: 0.00000 (0%) | 200 OK [https://play.scavengrnet.com/login]
+
+
+Processing UsersController#index (for 76.120.186.153 at 2009-02-23 22:15:06) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to https://play.scavengrnet.com/hunters_lodge
+Filter chain halted as [:ensure_proper_protocol] rendered_or_redirected.
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.06400 (64002%) | 302 Found [http://play.scavengrnet.com/hunters_lodge]
+
+
+Processing UsersController#index (for 76.120.186.153 at 2009-02-23 22:15:07) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Redirected to https://play.scavengrnet.com/
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.25601 (256014%) | 302 Found [https://play.scavengrnet.com/hunters_lodge]
+
+
+Processing StaticPagesController#static_hunters_lodge (for 76.120.186.153 at 2009-02-23 22:15:08) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"static_hunters_lodge", "controller"=>"static_pages"}
+Redirected to http://play.scavengrnet.com/
+Filter chain halted as [:ensure_proper_protocol] rendered_or_redirected.
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.00000 (0%) | 302 Found [https://play.scavengrnet.com/]
+
+
+Processing StaticPagesController#static_hunters_lodge (for 76.120.186.153 at 2009-02-23 22:15:08) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"static_hunters_lodge", "controller"=>"static_pages"}
+Rendering template within layouts/application
+Rendering static_pages/static_hunters_lodge
+Completed in 0.06000 (16 reqs/sec) | Rendering: 0.04400 (73%) | DB: 0.21601 (360%) | 200 OK [http://play.scavengrnet.com/]
+
+
+Processing SessionsController#new (for 76.120.186.153 at 2009-02-23 22:15:19) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Redirected to https://play.scavengrnet.com/login
+Filter chain halted as [:ensure_proper_protocol] rendered_or_redirected.
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://play.scavengrnet.com/login]
+
+
+Processing SessionsController#new (for 76.120.186.153 at 2009-02-23 22:15:19) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.01200 (83 reqs/sec) | Rendering: 0.00800 (66%) | DB: 0.00000 (0%) | 200 OK [https://play.scavengrnet.com/login]
+
+
+Processing SessionsController#create (for 76.120.186.153 at 2009-02-23 22:15:44) [POST]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"d86bce53f5938a51f226742582ee28013d794fd8", "action"=>"create", "controller"=>"sessions", "password"=>"rossj", "email"=>"jrmcclain@comcast.net"}
+Redirected to https://play.scavengrnet.com/hunters_lodge
+Completed in 0.06400 (15 reqs/sec) | DB: 0.04800 (75%) | 302 Found [https://play.scavengrnet.com/session]
+
+
+Processing UsersController#index (for 76.120.186.153 at 2009-02-23 22:15:44) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/index
+Completed in 6.62038 (0 reqs/sec) | Rendering: 6.24036 (94%) | DB: 0.36402 (5%) | 200 OK [https://play.scavengrnet.com/hunters_lodge]
+
+
+Processing UsersController#winning_history (for 76.120.186.153 at 2009-02-23 22:16:31) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"winning_history", "id"=>"138", "controller"=>"users"}
+Redirected to http://play.scavengrnet.com/users/138/winning_history
+Filter chain halted as [:ensure_proper_protocol] rendered_or_redirected.
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.02400 (24000%) | 302 Found [https://play.scavengrnet.com/users/138/winning_history]
+
+
+Processing UsersController#winning_history (for 76.120.186.153 at 2009-02-23 22:16:31) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"action"=>"winning_history", "id"=>"138", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/winning_history
+Completed in 0.10401 (9 reqs/sec) | Rendering: 0.03200 (30%) | DB: 0.34802 (334%) | 200 OK [http://play.scavengrnet.com/users/138/winning_history]
+
+
+Processing UsersController#images (for 76.120.186.153 at 2009-02-23 22:16:32) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"format"=>"png", "action"=>"images", "id"=>"history-bottom", "controller"=>"users"}
+
+
+ActionController::UnknownAction (No action responded to images):
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+
+
+Processing UsersController#images (for 76.120.186.153 at 2009-02-23 22:16:32) [GET]
+  Session ID: a0dfedb797521bb9f4749c76bef89d8d
+  Parameters: {"format"=>"png", "action"=>"images", "id"=>"hunts-bottom", "controller"=>"users"}
+
+
+ActionController::UnknownAction (No action responded to images):
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /opt/ruby-enterprise-1.8.6-20090113/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_request_handler.rb:165:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:321:in `start_request_handler'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:282:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:280:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:163:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/utils.rb:161:in `safe_fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:279:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/application_spawner.rb:179:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:270:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `synchronize'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:263:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:135:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `fork'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:112:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/railz/framework_spawner.rb:87:in `start'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:222:in `spawn_rails_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `synchronize'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:217:in `spawn_rails_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:126:in `spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/spawn_manager.rb:251:in `handle_spawn_application'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `__send__'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /opt/ruby/lib/ruby/gems/1.8/gems/passenger-2.0.6/bin/passenger-spawn-server:46
+
+
+
+Processing QuestionViewsController#create (for 76.119.35.134 at 2009-02-24 01:30:39) [POST]
+  Session ID: 436d4f7cab8b7da618a96d28d79162af
+  Parameters: {"authenticity_token"=>"a3c2dbfb77d04c48ecf4f1f2660d540200c5cf3a", "action"=>"create", "controller"=>"question_views", "question_view"=>{"question_id"=>"996", "time"=>"483.6666666666667"}}
+Completed in 0.02800 (35 reqs/sec) | Rendering: 0.00400 (14%) | DB: 0.02400 (85%) | 200 OK [http://play.scavengrnet.com/question_views]
+
+
