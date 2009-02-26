@@ -10,3 +10,38 @@ Reads a rails app's log file for slow actions
       --min-cost=FLOAT
       --min-avg=FLOAT
       --min-max=FLOAT
+
+== Sample output:
+  $> slow-actions --controller my_log_file
+               Cost     Average Max
+  + UsersController (7 entries)
+  | Total:     1.88300 0.96000 6.62000 
+  | Render:    1.75600 0.89600 6.24000 
+  | DB:        0.29500 0.15000 0.36400 
+  |-+ index (3 entries)
+  | | Total:   2.49600 2.20600 6.62000 
+  | | Render:  2.35300 2.08000 6.24000 
+  | | DB:      0.25700 0.22800 0.36400 
+  |-+ winning_history (2 entries)
+  | | Total:   0.03800 0.05200 0.10400 
+  | | Render:  0.01100 0.01600 0.03200 
+  | | DB:      0.13800 0.18600 0.34800 
+
+  + StaticPagesController (3 entries)
+  | Total:     0.04500 0.04000 0.06000 
+  | Render:    0.03100 0.02700 0.04400 
+  | DB:        0.08200 0.07300 0.21600 
+  |-+ static_hunters_lodge (3 entries)
+  | | Total:   0.04500 0.04000 0.06000 
+  | | Render:  0.03100 0.02700 0.04400 
+  | | DB:      0.08200 0.07300 0.21600 
+
+  + SessionsController (5 entries)
+  | Total:     0.03300 0.02000 0.06400 
+  | Render:    0.00700 0.00400 0.01600 
+  | DB:        0.01500 0.00900 0.04800 
+  |-+ create (2 entries)
+  | | Total:   0.03400 0.04600 0.06400 
+  | | Render:  0.00100 0.00200 0.00400 
+  | | DB:      0.02600 0.03600 0.04800 
+
