@@ -108,6 +108,7 @@ class SlowActions
         @sessions[la.session] = s
       end
       s.add_entry(la)
+      la.processed = true
     end
 
     # now compute the times for each

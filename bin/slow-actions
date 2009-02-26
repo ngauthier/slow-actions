@@ -1,10 +1,26 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), '..', 'lib', 'slow_actions')
+
 @sa = SlowActions.new
-@sa.parse_file(ARGV[0])
-puts @sa.print_actions
-puts ""
-puts @sa.print_controller_tree
-puts ""
-puts @sa.print_sessions
+ARGV.select{|arg| arg[0,2] != "--"}.each do |file|
+  @sa.parse_file(file)
+end
+
+output = []
+if (ARGV.include? "--actions")
+  output << @sa.print_actions
+end
+if (ARGV.include? "--controllers")
+  output << @sa.print_controller_tree
+end
+if (ARGV.include? "--sessions")
+  output << @sa.print_sessions
+end
+
+
+if output.size == 0
+  puts "Usage: slow-actions (--actions | --controllers | --sessions) log_file"
+else
+  puts output.join("\n\n")
+end
 
