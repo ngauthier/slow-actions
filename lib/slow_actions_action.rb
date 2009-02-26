@@ -1,4 +1,4 @@
-require 'slow_actions_computation_module'
+require File.join(File.dirname(__FILE__), 'slow_actions_computation_module')
 class SlowActions
   private
   class Action

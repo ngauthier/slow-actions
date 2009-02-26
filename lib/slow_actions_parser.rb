@@ -1,4 +1,4 @@
-require 'slow_actions_log_entry'
+require File.join(File.dirname(__FILE__), 'slow_actions_log_entry')
 class SlowActions
   private
   class Parser

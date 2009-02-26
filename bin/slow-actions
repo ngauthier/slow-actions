@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require File.join(File.dirname(__FILE__), '..', 'lib', 'slow_actions')
+@sa = SlowActions.new
+@sa.parse_file(ARGV[0])
+puts @sa.print_actions
+puts ""
+puts @sa.print_controller_tree
+puts ""
+puts @sa.print_sessions
+

@@ -1,7 +1,7 @@
-require 'slow_actions_parser'
-require 'slow_actions_controller'
-require 'slow_actions_action'
-require 'slow_actions_session'
+require File.join(File.dirname(__FILE__), 'slow_actions_parser')
+require File.join(File.dirname(__FILE__), 'slow_actions_controller')
+require File.join(File.dirname(__FILE__), 'slow_actions_action')
+require File.join(File.dirname(__FILE__), 'slow_actions_session')
 
 class SlowActions
   def initialize

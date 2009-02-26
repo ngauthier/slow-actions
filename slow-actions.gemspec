@@ -6,12 +6,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nick Gauthier"]
-  s.date = %q{2009-02-25}
-  s.default_executable = %q{slow-actions.rb}
+  s.date = %q{2009-02-26}
+  s.default_executable = %q{slow-actions}
   s.description = %q{TODO}
   s.email = %q{nick@smartlogicsolutions.com}
-  s.executables = ["slow-actions.rb"]
-  s.files = ["VERSION.yml", "README.rdoc", "bin/slow-actions.rb", "lib/slow_actions.rb", "test/test_helper.rb", "test/data", "test/data/production.recent.log", "test/slow_actions_test.rb"]
+  s.executables = ["slow-actions"]
+  s.files = ["VERSION.yml", "README.rdoc", "bin/slow-actions", "lib/slow_actions_controller.rb", "lib/slow_actions_action.rb", "lib/slow_actions_parser.rb", "lib/slow_actions_log_entry.rb", "lib/slow_actions.rb", "lib/slow_actions_session.rb", "lib/slow_actions_computation_module.rb", "test/test_helper.rb", "test/data", "test/data/production.recent.log", "test/slow_actions_test.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/ngauthier/slow-actions}
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
