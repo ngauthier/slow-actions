@@ -31,4 +31,32 @@ class SlowActionsTest < Test::Unit::TestCase
       assert_equal 1, sa.controllers.select{|c| c.log_entries.include?(la)}.size
     end
   end
+
+  should "have populated actions" do
+    sa = SlowActions.new
+    sa.parse_file(@log_file)
+    sa.actions.each do |a|
+      assert a.log_entries.size > 0
+    end
+    # Make sure each log entry belongs to an action
+    sa.log_entries.each do |la|
+      assert_not_nil sa.actions.detect{|a| a.log_entries.include?(la)}
+      # and only one action claims it
+      assert_equal 1, sa.actions.select{|a| a.log_entries.include?(la)}.size
+    end
+  end
+
+  should "have populated sessions" do
+    sa = SlowActions.new
+    sa.parse_file(@log_file)
+    sa.sessions.each do |a|
+      assert a.log_entries.size > 0
+    end
+    # Make sure each log entry belongs to a session
+    sa.log_entries.each do |la|
+      assert_not_nil sa.sessions.detect{|s| s.log_entries.include?(la)}
+      # and only one session claims it
+      assert_equal 1, sa.sessions.select{|s| s.log_entries.include?(la)}.size
+    end
+  end
 end

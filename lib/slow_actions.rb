@@ -1,5 +1,7 @@
 require 'slow_actions_parser'
 require 'slow_actions_controller'
+require 'slow_actions_action'
+require 'slow_actions_session'
 
 class SlowActions
   def initialize
@@ -28,6 +30,14 @@ class SlowActions
     @controllers.values
   end
 
+  def actions
+    @actions.values
+  end
+
+  def sessions
+    @sessions.values
+  end
+
   private
 
   def process
@@ -42,6 +52,20 @@ class SlowActions
         @controllers[la.controller] = c
       end
       c.add_entry(la)
+
+      a = @actions[la.action]
+      if a.nil?
+        a = Action.new(la.action, c)
+        @actions[la.action] = a
+      end
+      a.add_entry(la)
+
+      s = @sessions[la.session]
+      if s.nil?
+        s = Session.new(la.session)
+        @sessions[la.session] = s
+      end
+      s.add_entry(la)
     end
   end
 end

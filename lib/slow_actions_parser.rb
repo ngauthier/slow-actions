@@ -38,7 +38,7 @@ class SlowActions
       end
       line = @file.readline
       if line =~ /^\s+Session ID: (\S+)$/
-        la.session_id = $1
+        la.session = $1
       end
       line = @file.readline
       if line =~ /^\s+Parameters: (.*)$/

@@ -10,7 +10,7 @@ class SlowActions
     attr_accessor :date
     attr_accessor :time
     attr_accessor :method
-    attr_accessor :session_id
+    attr_accessor :session
     attr_accessor :parameters
     attr_accessor :duration
     attr_accessor :rendering
