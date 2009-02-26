@@ -1,8 +1,14 @@
 require File.join(File.dirname(__FILE__), 'slow_actions_log_entry')
 class SlowActions
   private
+  # Text parser for #SlowActions
   class Parser
 
+    # Create a new #Parser
+    #   file_path: path to log file to parse
+    #   start_date: Date object. Entries before this date are skipped
+    #   end_date: Date object. Entries after this date are skipped
+    # Dates are inclusive
     def initialize(file_path, start_date, end_date)
       @file_path = file_path
       raise "File not found: #{file_path}" unless File.exists? file_path
@@ -10,7 +16,8 @@ class SlowActions
       @start_date = start_date
       @end_date = end_date
     end
-
+ 
+    # Initiate the parsing
     def parse
       @log_entries = []
       begin
@@ -28,6 +35,8 @@ class SlowActions
 
     private
 
+    # Parse an individual entry
+    #   line: one line of text
     def parse_log_entry(line)
       la = LogEntry.new
       if line =~ /^Processing (\S+)#(\S+) \(for (\S+) at (\S+) (\S+)\) \[(\S+)\]$/
@@ -75,6 +84,7 @@ class SlowActions
       return la
     end
 
+    # parse an error
     def parse_error
       line = "\n"
       while line == "\n"

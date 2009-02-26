@@ -1,10 +1,13 @@
+# Main class for the slow actions plugin library
 require File.join(File.dirname(__FILE__), 'slow_actions_parser')
 require File.join(File.dirname(__FILE__), 'slow_actions_controller')
 require File.join(File.dirname(__FILE__), 'slow_actions_action')
 require File.join(File.dirname(__FILE__), 'slow_actions_session')
 require 'date'
 
+# SlowActions class that is the master controller for processing slow actions
 class SlowActions
+  # Takes an options hash where you can specify :start_date and :end_date as "YYYY-MM-DD" strings
   def initialize(opts = {})
     @log_entries = []
     if opts[:start_date]
@@ -19,16 +22,23 @@ class SlowActions
     end
   end
 
+  # Parse the file found at "file_path" and add the log entries to its collection of entries.
   def parse_file(file_path)
     parser = Parser.new(file_path, @start_date, @end_date)
     @log_entries += parser.parse
     process
   end
 
+  # All the #LogEntry objects
   def log_entries
     return @log_entries
   end
 
+  # Print out all the actions and their statistics
+  #
+  #  :mincost  Lower bound on the cost of this action. See Computable.
+  #  :minavg   Lower bound on the average amount of time this action ever took
+  #  :minmax   Lower bound on the maximum amount of time this action ever took
   def print_actions(opts = {})
     str = ""
     str += "           Cost    Average Max\n"
@@ -45,6 +55,7 @@ class SlowActions
     return str
   end
 
+  # Print out all the controllers and their statistics, nesting actions as a tree. See #print_actions for options.
   def print_controller_tree(opts = {})
     str = ""
     str += "             Cost    Average Max\n"
@@ -70,6 +81,7 @@ class SlowActions
     return str
   end
 
+  # Print out all the session_ids and their statistics. See #print_actions for options.
   def print_sessions(opts = {})
     str = ""
     str += "           Cost    Average Max\n"
@@ -86,26 +98,34 @@ class SlowActions
     return str
   end
 
+  # Print out the stats as html. Not implemented.
   def to_html
     raise "Not Implemented"
   end
 
+  # All the #Controller objects.
   def controllers
     @controllers.values
   end
 
+  # All the #Action objects
   def actions
     @actions.values
   end
 
+  # All the #Session objects
   def sessions
     @sessions.values
   end
 
   private
 
-  attr_accessor :start_date, :end_date
+  # The Date to start parsing from
+  attr_accessor :start_date
+  # The Date to stop parsing at
+  attr_accessor :end_date
 
+  # Process statistics for all #Actions #Controllers and #Sessions
   def process
     @controllers ||= {}
     @actions ||= {}
@@ -142,6 +162,7 @@ class SlowActions
     @sessions.values.each{|s| s.compute_times}
   end
 
+  # Convert a float to 7 places padded with zeros then one space
   def ftos(float)
     str = ((float*1000).to_i.to_f/1000).to_s
     while str.size < 7

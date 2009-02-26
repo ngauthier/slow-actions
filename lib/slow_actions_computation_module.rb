@@ -1,9 +1,32 @@
+# Computable module provides the attributes and methods to compute statistics on log entries
+#
+# Cost is computed as
+#   avg * Math.log(total + 0.1)
+#
+# So that it can take into account the frequency for which an action is called
 module Computable
-    attr_reader :render_avg, :db_avg, :total_avg
-    attr_reader :render_max, :db_max, :total_max
-    attr_reader :render_cost, :db_cost, :total_cost
+    # the average time for rendering
+    attr_reader :render_avg
+    # the average time for the database
+    attr_reader :db_avg
+    # the average time for the entire object
+    attr_reader :total_avg
+    # the maximum time an object ever took to render
+    attr_reader :render_max
+    # the maximum time an object ever took to query the database
+    attr_reader :db_max
+    # the maximum time an object ever took to complete the entire action
+    attr_reader :total_max
+    # cost for this action to render
+    attr_reader :render_cost
+    # cost for this action to query the db
+    attr_reader :db_cost
+    # cost for this action to complete
+    attr_reader :total_cost
+    # average error rate for this action
     attr_reader :error_avg
 
+    # Perform all the computations in one loop
     def compute_times
       @render_avg = 0.0
       @db_avg = 0.0
