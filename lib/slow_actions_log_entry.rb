@@ -19,7 +19,9 @@ class SlowActions
     attr_accessor :processed
 
     def error?
-      error_text.nil? || !error_text.empty?
+      return false if error_text.nil?
+      return false if error_text.empty?
+      return true
     end
   end
 end

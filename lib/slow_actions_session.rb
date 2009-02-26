@@ -1,6 +1,8 @@
+require 'slow_actions_computation_module'
 class SlowActions
   private
   class Session
+    include Computable
     def initialize(name)
       @name = name
       @log_entries = []

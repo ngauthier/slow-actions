@@ -18,11 +18,50 @@ class SlowActions
     return @log_entries
   end
 
-  def print
-    raise "Not Implemented"
+  def print_actions
+    str = ""
+    str += "          Cost    Average Max\n"
+    actions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |a|
+      str += "==#{a.controller.name}:#{a.name}==\n"
+      str += "  Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
+      str += "  Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
+      str += "  DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
+
+    end
+    return str
   end
 
-  def print_html
+  def print_controller_tree
+    str = ""
+    str += "            Cost     Average Max\n"
+    controllers.sort{|x,y| y.total_cost <=> x.total_cost}.each do |c|
+      str += "==#{c.name}==\n"
+      str += "  Total:     #{ftos c.total_cost}#{ftos c.total_avg}#{ftos c.total_max}\n"
+      str += "  Render:    #{ftos c.render_cost}#{ftos c.render_avg}#{ftos c.render_max}\n"
+      str += "  DB:        #{ftos c.db_cost}#{ftos c.db_avg}#{ftos c.db_max}\n"
+      c.actions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |a|
+        str += "  ==#{a.name}==\n"
+        str += "    Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
+        str += "    Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
+        str += "    DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
+      end
+    end
+    return str
+  end
+
+  def print_sessions
+    str = ""
+    str += "          Cost    Average Max\n"
+    sessions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |s|
+      str += "==#{s.name}==\n"
+      str += "  Total:   #{ftos s.total_cost}#{ftos s.total_avg}#{ftos s.total_max}\n"
+      str += "  Render:  #{ftos s.render_cost}#{ftos s.render_avg}#{ftos s.render_max}\n"
+      str += "  DB:      #{ftos s.db_cost}#{ftos s.db_avg}#{ftos s.db_max}\n"
+    end
+    return str
+  end
+
+  def to_html
     raise "Not Implemented"
   end
 
@@ -57,6 +96,7 @@ class SlowActions
       if a.nil?
         a = Action.new(la.action, c)
         @actions[la.action] = a
+        c.add_action(a)
       end
       a.add_entry(la)
 
@@ -67,5 +107,18 @@ class SlowActions
       end
       s.add_entry(la)
     end
+
+    # now compute the times for each
+    @controllers.values.each{|c| c.compute_times}
+    @actions.values.each{|a| a.compute_times}
+    @sessions.values.each{|s| s.compute_times}
+  end
+
+  def ftos(float)
+    str = ((float*1000).to_i.to_f/1000).to_s
+    while str.size < 7
+      str += "0"
+    end
+    str += " "
   end
 end

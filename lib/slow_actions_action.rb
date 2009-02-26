@@ -1,6 +1,8 @@
+require 'slow_actions_computation_module'
 class SlowActions
   private
   class Action
+    include Computable
     def initialize(name, controller)
       @name = name
       @controller = controller

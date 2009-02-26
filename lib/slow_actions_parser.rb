@@ -50,16 +50,21 @@ class SlowActions
         la.error_text = error_text
         return la
       end
-      @file.readline
-      line = @file.readline
+      while !(line =~ /^Completed/ and line != "\n")
+        line = @file.readline
+      end
       if line =~ /^Completed in (\S+)/
-        la.duration = $1
+        la.duration = $1.to_f
       end
       if line =~ /Rendering: (\S+)/
-        la.rendering = $1
+        la.rendering = $1.to_f
+      else
+        la.rendering = 0.0
       end
       if line =~ /DB: (\S+)/
-        la.db = $1
+        la.db = $1.to_f
+      else
+        la.db = 0.0
       end
       return la
     end

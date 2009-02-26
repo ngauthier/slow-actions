@@ -1,9 +1,12 @@
+require 'slow_actions_computation_module'
 class SlowActions
   private
   class Controller
+    include Computable
     def initialize(name)
       @name = name
       @log_entries = []
+      @actions = []
     end
     attr_reader :name
 
@@ -12,6 +15,11 @@ class SlowActions
       la.controller = self
     end
     attr_reader :log_entries
+
+    def add_action(a)
+      @actions << a
+    end
+    attr_reader :actions
 
   end
 end
