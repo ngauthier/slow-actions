@@ -9,8 +9,8 @@ begin
     s.homepage = "http://github.com/ngauthier/slow-actions"
     s.description = "TODO"
     s.authors = ["Nick Gauthier"]
-    s.executables = ['bin/slow-actions']
-    s.files = FileList["[A-Z]*.*", "{bin,generators,lib,test,spec}/**/*"]
+    s.executables = ['slow-actions']
+    s.files = FileList["[A-Z]*.*", "{bin,lib,test}/**/*"]
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
