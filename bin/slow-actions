@@ -6,20 +6,34 @@ ARGV.select{|arg| arg[0,2] != "--"}.each do |file|
   @sa.parse_file(file)
 end
 
+opts = {}
+mincost = ARGV.detect{|arg| arg =~ /--min-cost=(\S+)/ }
+opts[:mincost] = $1.to_f if mincost
+
+minavg = ARGV.detect{|arg| arg =~ /--min-avg=(\S+)/ }
+opts[:minavg] = $1.to_f if minavg
+
+minmax = ARGV.detect{|arg| arg =~ /--min-max=(\S+)/ }
+opts[:minmax] = $1.to_f if minmax
+
 output = []
 if (ARGV.include? "--actions")
-  output << @sa.print_actions
+  output << @sa.print_actions(opts)
 end
 if (ARGV.include? "--controllers")
-  output << @sa.print_controller_tree
+  output << @sa.print_controller_tree(opts)
 end
 if (ARGV.include? "--sessions")
-  output << @sa.print_sessions
+  output << @sa.print_sessions(opts)
 end
 
 
 if output.size == 0
-  puts "Usage: slow-actions (--actions | --controllers | --sessions) log_file"
+  puts "Usage: slow-actions (--actions | --controllers | --sessions) log_file [log_file ...]"
+  puts "You may also specify:"
+  puts "\t--min-cost=FLOAT"
+  puts "\t--min-avg=FLOAT"
+  puts "\t--min-max=FLOAT"
 else
   puts output.join("\n\n")
 end
