@@ -13,6 +13,8 @@ Reads a rails app's log file for slow actions
       --min-cost=FLOAT
       --min-avg=FLOAT
       --min-max=FLOAT
+      --start-date=YYYY-MM-DD
+      --end-date=YYYY-MM-DD
 
 === Ruby Code
 
