@@ -20,13 +20,13 @@ class SlowActions
 
   def print_actions
     str = ""
-    str += "          Cost    Average Max\n"
+    str += "          Cost     Average Max\n"
     actions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |a|
-      str += "==#{a.controller.name}:#{a.name}==\n"
+      str += "- #{a.controller.name} : #{a.name} (#{a.log_entries.size} entries)\n"
       str += "  Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
       str += "  Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
       str += "  DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
-
+      str += "\n"
     end
     return str
   end
@@ -35,28 +35,30 @@ class SlowActions
     str = ""
     str += "            Cost     Average Max\n"
     controllers.sort{|x,y| y.total_cost <=> x.total_cost}.each do |c|
-      str += "==#{c.name}==\n"
-      str += "  Total:     #{ftos c.total_cost}#{ftos c.total_avg}#{ftos c.total_max}\n"
-      str += "  Render:    #{ftos c.render_cost}#{ftos c.render_avg}#{ftos c.render_max}\n"
-      str += "  DB:        #{ftos c.db_cost}#{ftos c.db_avg}#{ftos c.db_max}\n"
+      str += "+ #{c.name} (#{c.log_entries.size} entries)\n"
+      str += "| Total:     #{ftos c.total_cost}#{ftos c.total_avg}#{ftos c.total_max}\n"
+      str += "| Render:    #{ftos c.render_cost}#{ftos c.render_avg}#{ftos c.render_max}\n"
+      str += "| DB:        #{ftos c.db_cost}#{ftos c.db_avg}#{ftos c.db_max}\n"
       c.actions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |a|
-        str += "  ==#{a.name}==\n"
-        str += "    Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
-        str += "    Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
-        str += "    DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
+        str += "|-+ #{a.name} (#{a.log_entries.size} entries)\n"
+        str += "| | Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
+        str += "| | Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
+        str += "| | DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
       end
+      str += "\n"
     end
     return str
   end
 
   def print_sessions
     str = ""
-    str += "          Cost    Average Max\n"
+    str += "          Cost     Average Max\n"
     sessions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |s|
-      str += "==#{s.name}==\n"
-      str += "  Total:   #{ftos s.total_cost}#{ftos s.total_avg}#{ftos s.total_max}\n"
-      str += "  Render:  #{ftos s.render_cost}#{ftos s.render_avg}#{ftos s.render_max}\n"
-      str += "  DB:      #{ftos s.db_cost}#{ftos s.db_avg}#{ftos s.db_max}\n"
+      str += "+ #{s.name} (#{s.log_entries.size} entries)\n"
+      str += "| Total:   #{ftos s.total_cost}#{ftos s.total_avg}#{ftos s.total_max}\n"
+      str += "| Render:  #{ftos s.render_cost}#{ftos s.render_avg}#{ftos s.render_max}\n"
+      str += "| DB:      #{ftos s.db_cost}#{ftos s.db_avg}#{ftos s.db_max}\n"
+      str += "\n"
     end
     return str
   end
