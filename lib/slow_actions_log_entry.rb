@@ -1,6 +1,9 @@
 class SlowActions
   private
   class LogEntry
+    def initialize
+      self.processed = false
+    end
     attr_accessor :controller
     attr_accessor :action
     attr_accessor :ip
@@ -13,6 +16,7 @@ class SlowActions
     attr_accessor :rendering
     attr_accessor :db
     attr_accessor :error_text
+    attr_accessor :processed
 
     def error?
       error_text.nil? || !error_text.empty?
