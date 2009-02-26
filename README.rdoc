@@ -5,11 +5,22 @@ Nick Gauthier (nick@smartlogicsolutions.com)
 Reads a rails app's log file for slow actions
 
 == Usage
+
+=== Command line
+
   slow-actions (--actions | --controllers | --sessions) log_file [log_file ...]
     You may also specify:
       --min-cost=FLOAT
       --min-avg=FLOAT
       --min-max=FLOAT
+
+=== Ruby Code
+
+  require 'rubygems'
+  require 'slow_actions'
+  @sa = SlowActions.new
+  @sa.parse_file(file_path)
+  puts @sa.print_actions
 
 == Sample output:
   $> slow-actions --controller my_log_file
