@@ -10,8 +10,9 @@ class SlowActionsTest < Test::Unit::TestCase
   end
 
   should "be able to read actions from a file" do
-    sap = SlowActionParser.new(@log_file)
-    actions = sap.parse
+    sa = SlowActions.new
+    sa.parse_file(@log_file)
+    actions = sa.actions
     assert actions.size > 0, "No actions returned"
     assert_equal 16, actions.size, "Wrong number of actions"
     error_action = actions.detect{|a| a[:error_text] }
