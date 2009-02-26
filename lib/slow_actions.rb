@@ -6,8 +6,8 @@ class SlowActions
   end
 
   def parse_file(file_path)
-    sap = SlowActionsParser.new(file_path)
-    @actions += sap.parse
+    parser = Parser.new(file_path)
+    @actions += parser.parse
   end
 
   def actions
@@ -15,24 +15,11 @@ class SlowActions
   end
 
   def process
-    # store this in a way that we can tell time based on:
-    # controller
-    # controller + action
-    # controller + action + params
-    # user
-    # user + controller
-    # user + controller + action
-    # user + controller + action + params
-    #
-    # and filter by date.
-    @processed_actions = []
-    @actions.each do |a|
-      
-    end
+    raise "Not Implemented"
   end
 
   def print
-    
+    raise "Not Implemented"
   end
 
   def print_html
