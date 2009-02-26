@@ -1,3 +1,4 @@
+require 'slow_actions_log_entry'
 class SlowActions
   private
   class Parser
@@ -9,56 +10,58 @@ class SlowActions
     end
 
     def parse
-      @actions = []
+      @log_entries = []
       begin
         while true
           line = @file.readline
           if line =~ /^Processing/
-            @actions << parse_action(line)
+            @log_entries << parse_log_entry(line)
           end
         end
       rescue EOFError => ex
         @file.close    
       end
-      return @actions
+      return @log_entries
     end
 
     private
 
-    def parse_action(line)
-      action = {}
+    def parse_log_entry(line)
+      la = LogEntry.new
       if line =~ /^Processing (\S+)#(\S+) \(for (\S+) at (\S+) (\S+)\) \[(\S+)\]$/
-        action[:controller] = $1
-        action[:action] = $2
-        action[:ip] = $3
-        action[:date] = $4
-        action[:time] = $5
-        action[:method] = $6
+        la.controller = $1
+        la.action = $2
+        la.ip = $3
+        la.date = $4
+        la.time = $5
+        la.method = $6
       end
       line = @file.readline
       if line =~ /^\s+Session ID: (\S+)$/
-        action[:session_id] = $1
+        la.session_id = $1
       end
       line = @file.readline
       if line =~ /^\s+Parameters: (.*)$/
-        action[:parameters] = $1
+        la.parameters = $1
       end
       line = @file.readline
       if line == "\n"
-        return action.merge(parse_error)
+        error_text = parse_error
+        la.error_text = error_text
+        return la
       end
       @file.readline
       line = @file.readline
       if line =~ /^Completed in (\S+)/
-        action[:duration] = $1
+        la.duration = $1
       end
       if line =~ /Rendering: (\S+)/
-        action[:rendering] = $1
+        la.rendering = $1
       end
       if line =~ /DB: (\S+)/
-        action[:db] = $1
+        la.db = $1
       end
-      return action
+      return la
     end
 
     def parse_error
@@ -71,7 +74,7 @@ class SlowActions
         line = @file.readline
         error_txt += line
       end
-      {:error_text => error_txt}
+      return error_txt
     end
   end
 end

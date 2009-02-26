@@ -2,16 +2,16 @@ require 'slow_actions_parser'
 
 class SlowActions
   def initialize
-    @actions = []
+    @log_entries = []
   end
 
   def parse_file(file_path)
     parser = Parser.new(file_path)
-    @actions += parser.parse
+    @log_entries += parser.parse
   end
 
-  def actions
-    return @actions
+  def log_entries
+    return @log_entries
   end
 
   def process
