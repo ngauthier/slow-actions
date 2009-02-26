@@ -5,10 +5,8 @@ Nick Gauthier (nick@smartlogicsolutions.com)
 Reads a rails app's log file for slow actions
 
 == Usage
-./bin/slow-actions.rb path/to/log/file
-
-Or:
-
-  require 'slow_actions'
-  sap = SlowActionParser.new(file_path)
-  actions = sap.parse
+  slow-actions (--actions | --controllers | --sessions) log_file [log_file ...]
+    You may also specify:
+      --min-cost=FLOAT
+      --min-avg=FLOAT
+      --min-max=FLOAT
