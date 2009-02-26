@@ -1,4 +1,5 @@
 *.sw?
+doc
 .DS_Store
 coverage
 pkg
