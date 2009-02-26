@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), '..', 'lib', 'slow_actions')
 
-@sa = SlowActions.new
+opts = {}
+start_date = ARGV.detect{|arg| arg =~/--start-date=(\S+)/}
+opts[:start_date] = $1 if start_date
+end_date = ARGV.detect{|arg| arg =~/--end-date=(\S+)/}
+opts[:end_date] = $1 if start_date
+
+
+@sa = SlowActions.new(opts)
 ARGV.select{|arg| arg[0,2] != "--"}.each do |file|
   @sa.parse_file(file)
 end
@@ -34,6 +41,8 @@ if output.size == 0
   puts "\t--min-cost=FLOAT"
   puts "\t--min-avg=FLOAT"
   puts "\t--min-max=FLOAT"
+  puts "\t--start-date=YYYY-MM-DD"
+  puts "\t--end-date=YYYY-MM-DD"
 else
   puts output.join("\n\n")
 end

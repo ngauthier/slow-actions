@@ -3,10 +3,12 @@ class SlowActions
   private
   class Parser
 
-    def initialize(file_path)
+    def initialize(file_path, start_date, end_date)
       @file_path = file_path
       raise "File not found: #{file_path}" unless File.exists? file_path
       @file = File.new(file_path, 'r')
+      @start_date = start_date
+      @end_date = end_date
     end
 
     def parse
@@ -35,6 +37,10 @@ class SlowActions
         la.date = $4
         la.time = $5
         la.method = $6
+        parsed_date = Date.strptime(la.date)
+        if parsed_date < @start_date or parsed_date > @end_date
+          return nil
+        end
       end
       line = @file.readline
       if line =~ /^\s+Session ID: (\S+)$/

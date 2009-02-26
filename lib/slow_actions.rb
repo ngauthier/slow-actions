@@ -2,14 +2,25 @@ require File.join(File.dirname(__FILE__), 'slow_actions_parser')
 require File.join(File.dirname(__FILE__), 'slow_actions_controller')
 require File.join(File.dirname(__FILE__), 'slow_actions_action')
 require File.join(File.dirname(__FILE__), 'slow_actions_session')
+require 'date'
 
 class SlowActions
-  def initialize
+  def initialize(opts = {})
     @log_entries = []
+    if opts[:start_date]
+      @start_date = Date.strptime(opts[:start_date])
+    else
+      @start_date = Date.strptime
+    end
+    if opts[:end_date]
+      @end_date = Date.strptime(opts[:end_date])
+    else
+      @end_date = Date.today
+    end
   end
 
   def parse_file(file_path)
-    parser = Parser.new(file_path)
+    parser = Parser.new(file_path, @start_date, @end_date)
     @log_entries += parser.parse
     process
   end
@@ -93,12 +104,14 @@ class SlowActions
 
   private
 
+  attr_accessor :start_date, :end_date
+
   def process
     @controllers ||= {}
     @actions ||= {}
     @sessions ||= {}
     @log_entries.each do |la|
-      next if la.processed
+      next if la.nil? or la.processed
       c = @controllers[la.controller]
       if c.nil?
         c = Controller.new(la.controller)
