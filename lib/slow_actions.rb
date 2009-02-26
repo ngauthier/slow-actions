@@ -20,7 +20,7 @@ class SlowActions
 
   def print_actions(opts = {})
     str = ""
-    str += "          Cost     Average Max\n"
+    str += "           Cost    Average Max\n"
     actions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |a|
       next if opts[:mincost] and a.total_cost < opts[:mincost]
       next if opts[:minavg] and a.total_avg < opts[:minavg]
@@ -36,7 +36,7 @@ class SlowActions
 
   def print_controller_tree(opts = {})
     str = ""
-    str += "            Cost     Average Max\n"
+    str += "             Cost    Average Max\n"
     controllers.sort{|x,y| y.total_cost <=> x.total_cost}.each do |c|
       next if opts[:mincost] and c.total_cost < opts[:mincost]
       next if opts[:minavg] and c.total_avg < opts[:minavg]
@@ -61,7 +61,7 @@ class SlowActions
 
   def print_sessions(opts = {})
     str = ""
-    str += "          Cost     Average Max\n"
+    str += "           Cost    Average Max\n"
     sessions.sort{|x,y| y.total_cost <=> x.total_cost}.each do |s|
       next if opts[:mincost] and s.total_cost < opts[:mincost]
       next if opts[:minavg] and s.total_avg < opts[:minavg]

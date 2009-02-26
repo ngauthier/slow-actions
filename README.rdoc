@@ -13,7 +13,7 @@ Reads a rails app's log file for slow actions
 
 == Sample output:
   $> slow-actions --controller my_log_file
-               Cost     Average Max
+               Cost    Average Max
   + UsersController (7 entries)
   | Total:     1.88300 0.96000 6.62000 
   | Render:    1.75600 0.89600 6.24000 
