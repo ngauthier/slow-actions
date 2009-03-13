@@ -25,36 +25,56 @@ Reads a rails app's log file for slow actions
   puts @sa.print_actions
 
 == Sample output:
-  $> slow-actions --controller my_log_file
+  $> slow-actions --actions --min-cost=2 test/data/development.log
+             Cost    Average Max
+  - UsersController : game_history (22 entries, 0% Error)
+    Total:   11275.447 3642.437 12728.0 
+    Render:  7.20300 2.32700 17.2450 
+    DB:      10.5020 3.39200 10.0000 
+
+  - QuestionsController : refresh_index_table (89 entries, 0% Error)
+    Total:   908.494 202.348 307.000 
+    Render:  0.00000 0.00000 0.00000 
+    DB:      32.5880 7.25800 10.0000 
+
+  - UsersController : show (128 entries, 0% Error)
+    Total:   664.292 136.888 2680.00 
+    Render:  0.33500 0.06900 3.41000 
+    DB:      18.2330 3.75700 114.000 
+
+  $> slow-actions --controllers --min-cost=2 test/data/development.log > ~/Desktop/sa-controllers.txt
                Cost    Average Max
-  + UsersController (7 entries)
-  | Total:     1.88300 0.96000 6.62000 
-  | Render:    1.75600 0.89600 6.24000 
-  | DB:        0.29500 0.15000 0.36400 
-  |-+ index (3 entries)
-  | | Total:   2.49600 2.20600 6.62000 
-  | | Render:  2.35300 2.08000 6.24000 
-  | | DB:      0.25700 0.22800 0.36400 
-  |-+ winning_history (2 entries)
-  | | Total:   0.03800 0.05200 0.10400 
-  | | Render:  0.01100 0.01600 0.03200 
-  | | DB:      0.13800 0.18600 0.34800 
+  + UsersController (236 entries, 0% Error)
+  | Total:     2165.375 396.279 12728.0 
+  | Render:    1.63400 0.29900 17.2450 
+  | DB:        7.03400 1.28700 114.000 
+  |-+ game_history (22 entries, 0% Error)
+  | | Total:   11275.447 3642.437 12728.0 
+  | | Render:  7.20300 2.32700 17.2450 
+  | | DB:      10.5020 3.39200 10.0000 
+  |-+ show (128 entries, 0% Error)
+  | | Total:   664.292 136.888 2680.00 
+  | | Render:  0.33500 0.06900 3.41000 
+  | | DB:      18.2330 3.75700 114.000 
+  |-+ index (812 entries, 51% Error)
+  | | Total:   465.660 69.5050 1922.00 
+  | | Render:  0.30100 0.04500 2.39600 
+  | | DB:      40.9320 6.10900 1164.00 
 
-  + StaticPagesController (3 entries)
-  | Total:     0.04500 0.04000 0.06000 
-  | Render:    0.03100 0.02700 0.04400 
-  | DB:        0.08200 0.07300 0.21600 
-  |-+ static_hunters_lodge (3 entries)
-  | | Total:   0.04500 0.04000 0.06000 
-  | | Render:  0.03100 0.02700 0.04400 
-  | | DB:      0.08200 0.07300 0.21600 
+  $> slow-actions --sessions --min-cost=2 test/data/development.log > ~/Desktop/sa-sessions.txt
+             Cost    Average Max
+  + d2dac54dc3816195ed9ef083e2811c61 (89 entries, 60% Error)
+  | Total:   10923.296 2432.935 12603.0 
+  | Render:  0.00000 0.00000 0.00000 
+  | DB:      51.9520 11.5710 53.0000 
 
-  + SessionsController (5 entries)
-  | Total:     0.03300 0.02000 0.06400 
-  | Render:    0.00700 0.00400 0.01600 
-  | DB:        0.01500 0.00900 0.04800 
-  |-+ create (2 entries)
-  | | Total:   0.03400 0.04600 0.06400 
-  | | Render:  0.00100 0.00200 0.00400 
-  | | DB:      0.02600 0.03600 0.04800 
+  + 3283ca1f8b1039f8c4403cbc7f9941c9 (18 entries, 5% Error)
+  | Total:   2179.158 752.494 12728.0 
+  | Render:  9.70500 3.35100 17.2450 
+  | DB:      2.93100 1.01200 10.0000 
+
+  + 867bc340e6d65e673f29c57189feaf2b (133 entries, 0% Error)
+  | Total:   1083.138 221.450 386.000 
+  | Render:  0.00000 0.00000 0.00000 
+  | DB:      44.2030 9.03700 90.0000 
 

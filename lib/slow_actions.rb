@@ -46,7 +46,8 @@ class SlowActions
       next if opts[:mincost] and a.total_cost < opts[:mincost]
       next if opts[:minavg] and a.total_avg < opts[:minavg]
       next if opts[:minmax] and a.total_max < opts[:minmax]
-      str += "- #{a.controller.name} : #{a.name} (#{a.log_entries.size} entries)\n"
+      str += "- #{a.controller.name} : #{a.name} "
+      str += "(#{a.log_entries.size} entries, #{(a.error_avg*100).to_i}% Error)\n"
       str += "  Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
       str += "  Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
       str += "  DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
@@ -63,7 +64,7 @@ class SlowActions
       next if opts[:mincost] and c.total_cost < opts[:mincost]
       next if opts[:minavg] and c.total_avg < opts[:minavg]
       next if opts[:minmax] and c.total_max < opts[:minmax]
-      str += "+ #{c.name} (#{c.log_entries.size} entries)\n"
+      str += "+ #{c.name} (#{c.log_entries.size} entries, #{(c.error_avg*100).to_i}% Error)\n"
       str += "| Total:     #{ftos c.total_cost}#{ftos c.total_avg}#{ftos c.total_max}\n"
       str += "| Render:    #{ftos c.render_cost}#{ftos c.render_avg}#{ftos c.render_max}\n"
       str += "| DB:        #{ftos c.db_cost}#{ftos c.db_avg}#{ftos c.db_max}\n"
@@ -71,7 +72,7 @@ class SlowActions
         next if opts[:mincost] and a.total_cost < opts[:mincost]
         next if opts[:minavg] and a.total_avg < opts[:minavg]
         next if opts[:minmax] and a.total_max < opts[:minmax]
-        str += "|-+ #{a.name} (#{a.log_entries.size} entries)\n"
+        str += "|-+ #{a.name} (#{a.log_entries.size} entries, #{(a.error_avg*100).to_i}% Error)\n"
         str += "| | Total:   #{ftos a.total_cost}#{ftos a.total_avg}#{ftos a.total_max}\n"
         str += "| | Render:  #{ftos a.render_cost}#{ftos a.render_avg}#{ftos a.render_max}\n"
         str += "| | DB:      #{ftos a.db_cost}#{ftos a.db_avg}#{ftos a.db_max}\n"
@@ -89,7 +90,7 @@ class SlowActions
       next if opts[:mincost] and s.total_cost < opts[:mincost]
       next if opts[:minavg] and s.total_avg < opts[:minavg]
       next if opts[:minmax] and s.total_max < opts[:minmax]
-      str += "+ #{s.name} (#{s.log_entries.size} entries)\n"
+      str += "+ #{s.name} (#{s.log_entries.size} entries, #{(s.error_avg*100).to_i}% Error)\n"
       str += "| Total:   #{ftos s.total_cost}#{ftos s.total_avg}#{ftos s.total_max}\n"
       str += "| Render:  #{ftos s.render_cost}#{ftos s.render_avg}#{ftos s.render_max}\n"
       str += "| DB:      #{ftos s.db_cost}#{ftos s.db_avg}#{ftos s.db_max}\n"
@@ -160,6 +161,9 @@ class SlowActions
     @controllers.values.each{|c| c.compute_times}
     @actions.values.each{|a| a.compute_times}
     @sessions.values.each{|s| s.compute_times}
+
+    # return something simple. This helps irb not barf on itself trying to print everything
+    return true
   end
 
   # Convert a float to 7 places padded with zeros then one space

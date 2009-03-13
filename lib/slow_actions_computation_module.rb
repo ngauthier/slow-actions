@@ -49,9 +49,9 @@ module Computable
         @total_max  = la.duration     if la.duration     > @total_max
       end
       
-      @render_avg /= @log_entries.size.to_f
-      @db_avg     /= @log_entries.size.to_f
-      @total_avg  /= @log_entries.size.to_f
+      @render_avg /= @log_entries.size.to_f - @error_avg + 0.0001
+      @db_avg     /= @log_entries.size.to_f - @error_avg + 0.0001
+      @total_avg  /= @log_entries.size.to_f - @error_avg + 0.0001
       @error_avg  /= @log_entries.size.to_f
 
       # using math.log allows us to smooth out the score between

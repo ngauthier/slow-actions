@@ -35,8 +35,7 @@ class SlowActions
 
     # Whether or not this #LogEntry was an error
     def error?
-      return false if error_text.nil?
-      return false if error_text.empty?
+      return false if error_text.nil? or error_text.empty?
       return true
     end
   end

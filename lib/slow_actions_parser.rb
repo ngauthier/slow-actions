@@ -89,12 +89,12 @@ class SlowActions
       while line == "\n"
         line = @file.readline
       end
-      error_txt = ""
+      error_txt = []
       while line != "\n"
         line = @file.readline
-        error_txt += line
+        error_txt.push line
       end
-      return error_txt
+      return error_txt.join("")
     end
   end
 end
