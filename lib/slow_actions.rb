@@ -11,14 +11,14 @@ class SlowActions
   def initialize(opts = {})
     @log_entries = []
     if opts[:start_date]
-      @start_date = Date.strptime(opts[:start_date])
+      @start_date = opts[:start_date]
     else
-      @start_date = Date.strptime
+      @start_date = '0000-00-00' 
     end
     if opts[:end_date]
-      @end_date = Date.strptime(opts[:end_date])
+      @end_date = opts[:end_date]
     else
-      @end_date = Date.today
+      @end_date = "#{Date.today.year}-#{Date.today.month}-#{Date.today.day}"
     end
   end
 

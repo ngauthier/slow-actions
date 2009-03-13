@@ -46,8 +46,7 @@ class SlowActions
         la.date = $4
         la.time = $5
         la.method = $6
-        parsed_date = Date.strptime(la.date)
-        if parsed_date < @start_date or parsed_date > @end_date
+        if la.date < @start_date or la.date > @end_date
           return nil
         end
       end

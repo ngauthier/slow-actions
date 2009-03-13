@@ -3,3 +3,5 @@ doc
 .DS_Store
 coverage
 pkg
+test*.html
+test*.txt
