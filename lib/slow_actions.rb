@@ -23,9 +23,9 @@ class SlowActions
   end
 
   # Parse the file found at "file_path" and add the log entries to its collection of entries.
-  def parse_file(file_path)
+  def parse_file(file_path, *args)
     parser = Parser.new(file_path, @start_date, @end_date)
-    @log_entries += parser.parse
+    @log_entries += parser.parse(*args)
     process
   end
 
