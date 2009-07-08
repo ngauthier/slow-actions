@@ -4,7 +4,7 @@ require 'shoulda'
 require 'mocha'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'slow_actions'
+require File.join(File.dirname(__FILE__), '..', 'lib', 'slow_actions')
 
 class Test::Unit::TestCase
 end
