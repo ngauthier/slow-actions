@@ -38,5 +38,9 @@ class SlowActions
       return false if error_text.nil? or error_text.empty?
       return true
     end
+    
+    def to_s
+      "#{date} #{time} #{method} #{controller}##{action} #{parameters}"
+    end
   end
 end
