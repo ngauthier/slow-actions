@@ -1,8 +1,8 @@
 # Main class for the slow actions plugin library
-require File.join(File.dirname(__FILE__), 'slow_actions_parser')
-require File.join(File.dirname(__FILE__), 'slow_actions_controller')
-require File.join(File.dirname(__FILE__), 'slow_actions_action')
-require File.join(File.dirname(__FILE__), 'slow_actions_session')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_parser')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_controller')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_action')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_session')
 require 'date'
 
 # SlowActions class that is the master controller for processing slow actions
