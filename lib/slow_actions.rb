@@ -1,8 +1,8 @@
 # Main class for the slow actions plugin library
-require File.join(File.dirname(__FILE__), 'slow_actions_parser')
-require File.join(File.dirname(__FILE__), 'slow_actions_controller')
-require File.join(File.dirname(__FILE__), 'slow_actions_action')
-require File.join(File.dirname(__FILE__), 'slow_actions_session')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_parser')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_controller')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_action')
+require File.join(File.dirname(__FILE__), 'slow_actions', 'slow_actions_session')
 require 'date'
 
 # SlowActions class that is the master controller for processing slow actions
@@ -23,9 +23,9 @@ class SlowActions
   end
 
   # Parse the file found at "file_path" and add the log entries to its collection of entries.
-  def parse_file(file_path)
+  def parse_file(file_path, *args)
     parser = Parser.new(file_path, @start_date, @end_date)
-    @log_entries += parser.parse
+    @log_entries += parser.parse(*args)
     process
   end
 

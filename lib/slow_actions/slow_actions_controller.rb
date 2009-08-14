@@ -29,5 +29,8 @@ class SlowActions
     # All the #Actions under this #Controller
     attr_reader :actions
 
+    def to_s
+      @name
+    end
   end
 end

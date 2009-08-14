@@ -18,13 +18,17 @@ class SlowActions
     end
  
     # Initiate the parsing
-    def parse
+    def parse(*args)
+      config = {:sessions => []}
+      config.update(args.pop) if args.last.is_a?(Hash)
+      
       @log_entries = []
       begin
         while true
           line = @file.readline
           if line =~ /^Processing/
-            @log_entries << parse_log_entry(line)
+            entry = parse_log_entry(line)
+            @log_entries << entry if config[:sessions].empty? || config[:sessions].include?(entry.session)
           end
         end
       rescue EOFError => ex

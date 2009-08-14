@@ -26,5 +26,8 @@ class SlowActions
     # All the #LogEntry objects this #Action holds
     attr_reader :log_entries
 
+    def to_s
+      @name
+    end
   end
 end
