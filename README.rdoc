@@ -4,6 +4,12 @@ Nick Gauthier (nick@smartlogicsolutions.com)
 == Description
 Reads a rails app's log file for slow actions
 
+== Installation
+
+You will need to have Gemcutter[http://gemcutter.org/] in your list of gem sources.
+
+  gem install slow-actions
+
 == Usage
 
 === Command line
