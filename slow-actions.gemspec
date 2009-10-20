@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Nick Gauthier"]
   s.date = %q{2009-10-20}
   s.default_executable = %q{slow-actions}
-  s.description = %q{TODO}
+  s.description = %q{Reads a rails app's log file for slow actions}
   s.email = %q{nick@smartlogicsolutions.com}
   s.executables = ["slow-actions"]
   s.extra_rdoc_files = [
@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{TODO}
+  s.summary = %q{Reads a rails app's log file for slow actions}
   s.test_files = [
     "test/test_helper.rb",
      "test/slow_actions_parser_test.rb",
