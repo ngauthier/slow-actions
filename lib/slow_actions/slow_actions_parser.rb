@@ -73,14 +73,23 @@ class SlowActions
       end
       if line =~ /^Completed in (\S+)/
         la.duration = $1.to_f
+        if $1[-2,2] != "ms"
+          la.duration *= 1000.0
+        end
       end
       if line =~ /Rendering: (\S+)/
         la.rendering = $1.to_f
+        if $1[-2,2] != "ms"
+          la.rendering *= 1000.0
+        end
       else
         la.rendering = 0.0
       end
       if line =~ /DB: (\S+)/
         la.db = $1.to_f
+        if $1[-2,2] != "ms"
+          la.db *= 1000.0
+        end
       else
         la.db = 0.0
       end

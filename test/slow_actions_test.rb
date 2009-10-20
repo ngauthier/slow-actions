@@ -80,4 +80,28 @@ class SlowActionsTest < Test::Unit::TestCase
       assert_equal 3, @sa.log_entries.size
     end
   end
+
+  context "When parsing an old Rails log file with time in seconds" do
+    setup do
+      @log_file = File.join(File.dirname(__FILE__), 'data', 'old.log')
+      @sa = SlowActions.new
+      @sa.parse_file(@log_file)
+    end
+
+    should "convert the time to milliseconds" do
+      assert_equal 0.34, @sa.log_entries.first.duration
+    end
+  end
+
+  context "When parsing a new Rails log file with time in milliseconds" do
+    setup do
+      @log_file = File.join(File.dirname(__FILE__), 'data', 'new.log')
+      @sa = SlowActions.new
+      @sa.parse_file(@log_file)
+    end
+
+    should "leave the time in milliseconds" do
+      assert_equal 191.0, @sa.log_entries.first.duration
+    end
+  end
 end

@@ -1,0 +1,8 @@
+
+Processing ClientsController#show (for 127.0.0.1 at 2008-04-09 15:26:51) [GET]
+  Session ID: 95319ed68ddb58d38038d6381611bc5f
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"vendor/clients"}
+Redirected to http://www.example.com/vendor/login
+Filter chain halted as [#<ActionController::Filters::ClassMethods::SymbolFilter:0x7f4d31674eb0 @filter=:check_authentication>] rendered_or_redirected.
+Completed in 0.00034 (2949 reqs/sec) | DB: 0.00079 (232%) | 302 Found [http://www.example.com/vendor/clients/1]
+

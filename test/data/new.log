@@ -1,0 +1,14 @@
+
+Processing Admin::DonationsController#filter_by_site (for 127.0.0.1 at 2009-10-09 15:43:46) [POST]
+  Parameters: {"authenticity_token"=>"j/Lm+X6E4JtsmMhpJcpFsceEaSWa1AJ7L9eRJM+7iUw=", "page"=>"", "_"=>"", "site_id"=>"10"}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Indexes (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) LIMIT 1[0m
+  [4;35;1mSite Load (0.2ms)[0m   [0mSELECT id, name FROM `sites` [0m
+  [4;36;1mSite Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `sites`[0m
+  [4;35;1mSite Indexes (0.2ms)[0m   [0mSHOW KEYS FROM `sites`[0m
+  [4;36;1mSite Load (0.2ms)[0m   [0;1mSELECT * FROM `sites` WHERE (`sites`.`id` = 8) LIMIT 1[0m
+  [4;35;1mSuccessfulDonation Load (0.3ms)[0m   [0mSELECT * FROM `successful_donations` WHERE (`successful_donations`.`site_id` = 10) ORDER BY created_at ASC[0m
+Rendered admin/donations/_donation_table (0.4ms)
+Completed in 191ms (View: 2, DB: 4) | 200 OK [http://cms.psl.localhost/admin/donations/filter_by_site]
+
