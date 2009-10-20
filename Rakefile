@@ -4,10 +4,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "slow-actions"
-    s.summary = %Q{TODO}
+    s.summary = %Q{Reads a rails app's log file for slow actions}
     s.email = "nick@smartlogicsolutions.com"
     s.homepage = "http://github.com/ngauthier/slow-actions"
-    s.description = "TODO"
+    s.description = "Reads a rails app's log file for slow actions"
     s.authors = ["Nick Gauthier"]
     s.executables = ['slow-actions']
     s.files = FileList["[A-Z]*.*", "{bin,lib,test}/**/*"]
